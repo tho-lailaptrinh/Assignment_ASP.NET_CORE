@@ -1,4 +1,5 @@
 ﻿using AspDotNet_Data.Model.Enums;
+using AspDotNet_MVC.Model.Entitis;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,5 +17,8 @@ namespace AspDotNet_Data.Model.Entitis
         public Guid IdUser { get; set; }
         public virtual User Users { get; set; }
         public virtual ICollection<HoaDonChiTiet> HoaDonChiTiets { get; set; }
+
+        public Guid IdDH {  get; set; }
+        public virtual DonHang DonHangs { get; set; }
     }
 }

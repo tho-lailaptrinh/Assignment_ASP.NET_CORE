@@ -16,6 +16,10 @@ namespace AspDotNet_Data.Model.Configuration
         {
             builder.ToTable("User");
             builder.HasKey(x => x.Id);
+            builder.Property(x => x.Name).IsRequired().HasMaxLength(100);
+            builder.Property(x => x.UserName).IsRequired().HasMaxLength(50);
+            builder.Property(x => x.Password).IsRequired().HasMaxLength(20);
+            builder.Property(x => x.Address).HasMaxLength(100);
             builder.HasOne(x => x.GioHangs).WithOne(x => x.Users).HasForeignKey<GioHang>(x=>x.IdUser);
         }
     }

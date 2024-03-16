@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AspDotNet_MVC.Model.Entitis;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,5 +16,8 @@ namespace AspDotNet_Data.Model.Entitis
         public string MoTa { get; set; }
         public virtual ICollection<HoaDonChiTiet> HoaDonChiTiets { get; set; }
         public virtual ICollection<GioHangChiTiet> GioHangChiTiets { get; set; }
+
+        public Guid IdDMSP { get; set; }
+        public virtual DanhMucSanPham DanhMucSanPhams {  get; set; }    
     }
 }

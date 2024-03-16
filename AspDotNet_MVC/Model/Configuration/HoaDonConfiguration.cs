@@ -16,6 +16,7 @@ namespace AspDotNet_Data.Model.Configuration
             builder.ToTable("HoaDon");
             builder.HasKey(x => x.Id);
             builder.HasOne(x => x.Users).WithMany(x => x.HoaDons).HasForeignKey(x => x.IdUser);
+            builder.HasOne(x => x.DonHangs).WithMany(x => x.HoaDons).HasForeignKey(x => x.IdDH);
 
         }
     }

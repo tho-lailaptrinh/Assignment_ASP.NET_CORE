@@ -10,6 +10,9 @@ namespace AspDotNet_MVC.Model.Configuration
         {
             builder.ToTable("HoaDonChiTiet");
             builder.HasKey(x => x.Id);
+            builder.Property(x => x.MoTa).HasMaxLength(200);
+            builder.Property(x => x.TenSP).IsRequired().HasMaxLength(100);
+
             builder.HasOne(x => x.SanPhams).WithMany(x => x.HoaDonChiTiets).HasForeignKey(x => x.IdSP);
             builder.HasOne(x => x.HoaDons).WithMany(x => x.HoaDonChiTiets).HasForeignKey(x => x.IdHD);
         }
